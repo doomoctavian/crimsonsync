@@ -1,11 +1,416 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>CrimsonSync: Next-Gen Blood Donation Network</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CrimsonSync - Next-Gen Blood Donation Network connecting donors, recipients, hospitals, and blood banks in real time.">
+    <meta name="theme-color" content="#DC2626">
+    <title>CrimsonSync - Blood Donation Network</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <a href="login-page/login.html">LOGIN FROM HERE</a>
-    <a href="signup-page/signup.html">SIGN UP HERE</a>
+    <!-- Navigation Bar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <svg class="logo-icon" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/>
+                </svg>
+                <span>CrimsonSync</span>
+            </div>
+
+            <div class="nav-menu" id="navMenu">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#features" class="nav-link">Features</a>
+                <a href="#how-it-works" class="nav-link">How It Works</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                    <span class="theme-icon">🌙</span>
+                </button>
+                <a href="loginpage/login.html" class="nav-btn login-btn">Login</a>
+                <a href="signuppage/signup.html" class="nav-btn cta-btn">Get Started</a>
+            </div>
+
+            <button class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title fade-in-up" data-delay="0">
+                    Connecting Donors.<br>
+                    <span class="highlight">Saving Lives.</span>
+                </h1>
+                <p class="hero-subtitle fade-in-up" data-delay="0.1">
+                    CrimsonSync bridges donors, recipients, hospitals, and blood banks in real time. Connect, donate, and save lives today.
+                </p>
+                <div class="hero-buttons fade-in-up" data-delay="0.2">
+                    <button class="btn btn-primary">Become a Donor</button>
+                    <button class="btn btn-secondary">Request Blood</button>
+                </div>
+            </div>
+
+            <div class="hero-cards">
+                <div class="floating-card card-1 fade-in-up" data-delay="0.2">
+                    <div class="card-icon">❤️</div>
+                    <div>
+                        <p class="card-label">1 Donation</p>
+                        <p class="card-value">= 3 Lives Saved</p>
+                    </div>
+                </div>
+                <div class="floating-card card-2 fade-in-up" data-delay="0.4">
+                    <div class="card-icon">✅</div>
+                    <div>
+                        <p class="card-label">Match Found</p>
+                        <p class="card-value">Rare Blood Match</p>
+                    </div>
+                </div>
+                <div class="floating-card card-3 fade-in-up" data-delay="0.6">
+                    <div class="card-icon">⚡</div>
+                    <div>
+                        <p class="card-label">24/7 Support</p>
+                        <p class="card-value">Emergency Requests</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="scroll-indicator">
+            <span>Scroll to explore</span>
+            <div class="chevron">↓</div>
+        </div>
+    </section>
+
+    <!-- Live Stats Section -->
+    <section class="live-stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3 class="stat-number" data-target="50000">0</h3>
+                    <p class="stat-label">Registered Donors</p>
+                </div>
+                <div class="stat-card">
+                    <h3 class="stat-number" data-target="150000">0</h3>
+                    <p class="stat-label">Lives Saved</p>
+                </div>
+                <div class="stat-card">
+                    <h3 class="stat-number" data-target="250">0</h3>
+                    <p class="stat-label">Hospitals Connected</p>
+                </div>
+                <div class="stat-card">
+                    <h3 class="stat-number" data-target="10000">0</h3>
+                    <p class="stat-label">Emergency Requests</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Donate Section -->
+    <section id="about" class="why-donate">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Donate <span class="highlight">Blood?</span></h2>
+                <p>Your donation has the power to transform lives and strengthen our community.</p>
+            </div>
+
+            <div class="cards-grid">
+                <div class="benefit-card fade-in-up" data-delay="0">
+                    <div class="card-icon-lg">❤️</div>
+                    <h3>Save Lives</h3>
+                    <p>One blood donation can save up to three lives. Be a hero in your community.</p>
+                </div>
+                <div class="benefit-card fade-in-up" data-delay="0.1">
+                    <div class="card-icon-lg">👥</div>
+                    <h3>Community Impact</h3>
+                    <p>Join thousands of donors making a difference in healthcare outcomes.</p>
+                </div>
+                <div class="benefit-card fade-in-up" data-delay="0.2">
+                    <div class="card-icon-lg">🏆</div>
+                    <h3>Health Benefits</h3>
+                    <p>Regular blood donation can improve your cardiovascular health.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2>Powerful <span class="highlight">Features</span></h2>
+                <p>Everything you need to connect with blood donors and recipients in one platform.</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card fade-in-up" data-delay="0">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Real-Time Blood Availability</h3>
+                    <p>Instantly view available blood types across all connected hospitals.</p>
+                </div>
+                <div class="feature-card fade-in-up" data-delay="0.1">
+                    <div class="feature-icon">📢</div>
+                    <h3>Emergency SOS Alerts</h3>
+                    <p>Send critical blood requests with instant notifications to donors.</p>
+                </div>
+                <div class="feature-card fade-in-up" data-delay="0.2">
+                    <div class="feature-icon">✅</div>
+                    <h3>Donor Eligibility Checker</h3>
+                    <p>Smart questionnaire to verify if you're eligible to donate safely.</p>
+                </div>
+                <div class="feature-card fade-in-up" data-delay="0.3">
+                    <div class="feature-icon">📅</div>
+                    <h3>Appointment Scheduling</h3>
+                    <p>Book your donation appointment at your nearest blood bank.</p>
+                </div>
+                <div class="feature-card fade-in-up" data-delay="0.4">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>Hospital Verification</h3>
+                    <p>All hospitals are verified and certified for blood donation safety.</p>
+                </div>
+                <div class="feature-card fade-in-up" data-delay="0.5">
+                    <div class="feature-icon">🎮</div>
+                    <h3>Rewards & Gamification</h3>
+                    <p>Earn badges, achievements, and exclusive rewards for donations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2>How <span class="highlight">It Works</span></h2>
+                <p>Four simple steps to make a life-saving difference.</p>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-step fade-in-up" data-delay="0">
+                    <div class="step-number">1</div>
+                    <h3>Register</h3>
+                    <p>Create your account and complete your profile.</p>
+                </div>
+                <div class="timeline-connector"></div>
+                <div class="timeline-step fade-in-up" data-delay="0.1">
+                    <div class="step-number">2</div>
+                    <h3>Verify Eligibility</h3>
+                    <p>Answer health questions to ensure safe donation.</p>
+                </div>
+                <div class="timeline-connector"></div>
+                <div class="timeline-step fade-in-up" data-delay="0.2">
+                    <div class="step-number">3</div>
+                    <h3>Donate Blood</h3>
+                    <p>Visit a blood bank and complete the donation process.</p>
+                </div>
+                <div class="timeline-connector"></div>
+                <div class="timeline-step fade-in-up" data-delay="0.3">
+                    <div class="step-number">4</div>
+                    <h3>Save Lives</h3>
+                    <p>Your blood reaches those who need it most.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blood Compatibility Section -->
+    <section class="blood-compatibility">
+        <div class="container">
+            <div class="section-header">
+                <h2>Blood Type <span class="highlight">Compatibility</span></h2>
+                <p>Learn which blood types can donate to and receive from one another.</p>
+            </div>
+
+            <div class="table-wrapper">
+                <table class="compatibility-table">
+                    <thead>
+                        <tr>
+                            <th>Blood Type</th>
+                            <th>Can Donate To</th>
+                            <th>Can Receive From</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="blood-type">O-</td>
+                            <td>All Types (Universal Donor)</td>
+                            <td>O-</td>
+                        </tr>
+                        <tr>
+                            <td class="blood-type">O+</td>
+                            <td>O+, A+, B+, AB+</td>
+                            <td>O-, O+</td>
+                        </tr>
+                        <tr>
+                            <td class="blood-type">A-</td>
+                            <td>A-, A+, AB-, AB+</td>
+                            <td>A-, O-</td>
+                        </tr>
+                        <tr>
+                            <td class="blood-type">A+</td>
+                            <td>A+, AB+</td>
+                            <td>A-, A+, O-, O+</td>
+                        </tr>
+                        <tr>
+                            <td class="blood-type">B-</td>
+                            <td>B-, B+, AB-, AB+</td>
+                            <td>B-, O-</td>
+                        </tr>
+                        <tr>
+                            <td class="blood-type">B+</td>
+                            <td>B+, AB+</td>
+                            <td>B-, B+, O-, O+</td>
+                        </tr>
+                        <tr>
+                            <td class="blood-type">AB-</td>
+                            <td>AB-, AB+ (Rare)</td>
+                            <td>AB-, A-, B-, O-</td>
+                        </tr>
+                        <tr>
+                            <td class="blood-type">AB+</td>
+                            <td>AB+ (Universal Recipient)</td>
+                            <td>All Types</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2>Real <span class="highlight">Stories</span></h2>
+                <p>Hear from donors, recipients, and hospital partners who've changed lives.</p>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card fade-in-up" data-delay="0">
+                    <div class="testimonial-header">
+                        <span class="avatar">👩‍⚕️</span>
+                        <div>
+                            <h4>Punit Chauhan</h4>
+                            <p class="role">Blood Donor</p>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">
+                        "CrimsonSync made it so easy to find nearby donation centers. I've donated 5 times in the past year and feel proud knowing I've saved lives."
+                    </p>
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                </div>
+
+                <div class="testimonial-card fade-in-up" data-delay="0.1">
+                    <div class="testimonial-header">
+                        <span class="avatar">👨‍💼</span>
+                        <div>
+                            <h4>Saimon Giri</h4>
+                            <p class="role">Blood Recipient</p>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">
+                        "During my surgery, the emergency blood request was fulfilled within 2 hours. CrimsonSync literally saved my life."
+                    </p>
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                </div>
+
+                <div class="testimonial-card fade-in-up" data-delay="0.2">
+                    <div class="testimonial-header">
+                        <span class="avatar">👩‍⚕️</span>
+                        <div>
+                            <h4>Dr. Samir Panta</h4>
+                            <p class="role">Hospital Administrator</p>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">
+                        "This platform reduced our blood shortage emergencies by 60%. The real-time tracking and donor network is invaluable."
+                    </p>
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Your single donation can save up to three lives.</h2>
+            <p>Join CrimsonSync today and become a hero in your community.</p>
+            <div class="cta-buttons">
+                <button class="btn btn-light">Donate Now</button>
+                <button class="btn btn-outline-light">Learn More</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <svg class="logo-icon-small" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/>
+                        </svg>
+                        <span>CrimsonSync</span>
+                    </div>
+                    <p>Connecting donors, recipients, hospitals, and blood banks for a healthier tomorrow.</p>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#how-it-works">How It Works</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li>📧 crimsonsync@tutamail.com</li>
+                        <li>📞 083-5200000</li>
+                        <li>📍 Available 24/7</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 CrimsonSync. All rights reserved. Saving lives, one donation at a time.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Twitter">🐦</a>
+                    <a href="#" aria-label="Facebook">👍</a>
+                    <a href="#" aria-label="Instagram">📷</a>
+                    <a href="#" aria-label="LinkedIn">💼</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">↑</button>
+
+    <script src="script.js"></script>
 </body>
 </html>
-
