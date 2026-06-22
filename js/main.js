@@ -79,6 +79,7 @@ function renderRoute(route, user) {
     case 'leaderboard': return renderLeaderboardPage(user);
     case 'profile': return renderProfilePage(user);
     case 'logout':
+      navigate('home');
       logout();
       return '';
     default: return renderNotFound();
