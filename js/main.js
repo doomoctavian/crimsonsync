@@ -617,7 +617,12 @@ function submitRequest(data, form) {
 
 function submitChat(data, form) {
   const button = form.querySelector('[data-chat-id]');
-  sendMessage(button.dataset.chatId, data.message || '');
+  const text = (data.message || '').trim();
+  if (!text) {
+    toast('Please enter a message.');
+    return;
+  }
+  sendMessage(button.dataset.chatId, text);
   form.reset();
   toast('Message added to secure chat mock thread.');
 }

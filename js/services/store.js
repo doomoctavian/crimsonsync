@@ -18,6 +18,7 @@ function defaultState() {
 }
 
 let state = loadState();
+let stateNotificationQueued = false;
 
 function loadState() {
   const saved = localStorage.getItem(storageKeys.state);
@@ -40,7 +41,14 @@ export function getState() {
 export function setState(updater) {
   state = typeof updater === 'function' ? updater(structuredClone(state)) : updater;
   localStorage.setItem(storageKeys.state, JSON.stringify(state));
-  window.dispatchEvent(new CustomEvent('crimsonsync:state-change'));
+  if (stateNotificationQueued) {
+    return;
+  }
+  stateNotificationQueued = true;
+  queueMicrotask(() => {
+    stateNotificationQueued = false;
+    window.dispatchEvent(new CustomEvent('crimsonsync:state-change'));
+  });
 }
 
 export function currentUser() {
