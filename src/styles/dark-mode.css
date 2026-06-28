@@ -1,0 +1,120 @@
+@import './variables.css';
+
+[data-theme="dark"] .navbar,
+[data-theme="dark"] .dashboard-header,
+[data-theme="dark"] .dashboard-sidebar {
+    background: var(--bg-card);
+}
+
+[data-theme="dark"] .form-input,
+[data-theme="dark"] .form-select,
+[data-theme="dark"] .form-textarea,
+[data-theme="dark"] .chat-input-bar input {
+    background: var(--bg-light);
+    border-color: var(--border-light);
+    color: var(--text-dark);
+}
+
+[data-theme="dark"] .card,
+[data-theme="dark"] .stat-card,
+[data-theme="dark"] .auth-card {
+    background: var(--bg-card);
+    border-color: var(--border-light);
+}
+
+[data-theme="dark"] .data-table tr:hover td {
+    background: rgba(220, 38, 38, 0.08);
+}
+
+[data-theme="dark"] .upload-zone {
+    background: var(--bg-light);
+}
+
+[data-theme="dark"] .chat-bubble.received {
+    background: var(--bg-light);
+}
+
+/* ── Body & HTML smooth transition ──────────────────────── */
+body {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ── Auth pages in dark mode ─────────────────────────────── */
+[data-theme="dark"] .auth-page {
+    background: var(--gradient-hero);
+}
+
+[data-theme="dark"] .auth-brand h2 {
+    color: #f87171;
+}
+
+[data-theme="dark"] .auth-brand p {
+    color: var(--text-light);
+}
+
+[data-theme="dark"] .auth-card h1 {
+    color: var(--text-dark);
+}
+
+[data-theme="dark"] .auth-card .auth-subtitle,
+[data-theme="dark"] .auth-footer {
+    color: var(--text-light);
+}
+
+/* ── Form labels & placeholders ──────────────────────────── */
+[data-theme="dark"] .form-group label {
+    color: var(--text-dark);
+}
+
+[data-theme="dark"] .form-input::placeholder,
+[data-theme="dark"] .form-select,
+[data-theme="dark"] .form-textarea::placeholder {
+    color: var(--text-muted);
+}
+
+/* ── Dashboard body bg ───────────────────────────────────── */
+[data-theme="dark"] body {
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+}
+
+/* ── Dashboard page title & headings ─────────────────────── */
+[data-theme="dark"] .page-title,
+[data-theme="dark"] .section-title,
+[data-theme="dark"] h1, [data-theme="dark"] h2,
+[data-theme="dark"] h3, [data-theme="dark"] h4 {
+    color: var(--text-dark);
+}
+
+/* ── Dashboard table text ────────────────────────────────── */
+[data-theme="dark"] .data-table th {
+    background: rgba(220, 38, 38, 0.12);
+    color: var(--text-dark);
+    border-color: var(--border-light);
+}
+
+[data-theme="dark"] .data-table td {
+    color: var(--text-dark);
+    border-color: var(--border-light);
+}
+
+/* ── Sidebar links ───────────────────────────────────────── */
+[data-theme="dark"] .sidebar-link {
+    color: var(--text-light);
+}
+
+[data-theme="dark"] .sidebar-link:hover,
+[data-theme="dark"] .sidebar-link.active {
+    background: rgba(220, 38, 38, 0.12);
+    color: var(--accent);
+}
+
+/* ── Modal backdrop ──────────────────────────────────────── */
+[data-theme="dark"] .modal-overlay {
+    background: rgba(0, 0, 0, 0.6);
+}
+
+[data-theme="dark"] .modal {
+    background: var(--bg-card);
+    border-color: var(--border-light);
+}

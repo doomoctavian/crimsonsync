@@ -6,7 +6,14 @@
     <meta name="description" content="CrimsonSync - Next-Gen Blood Donation Network connecting donors, recipients, hospitals, and blood banks in real time.">
     <meta name="theme-color" content="#DC2626">
     <title>CrimsonSync - Blood Donation Network</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="src/pages/Home/style.css">
+    <style>
+        /* Page transition overlay */
+        #page-transition{position:fixed;inset:0;background:#DC2626;z-index:9999;pointer-events:none;opacity:0;transition:opacity 0.35s cubic-bezier(0.4,0,0.2,1);}
+        #page-transition.fade-out{opacity:0;}
+        #page-transition.fade-in{opacity:1;pointer-events:all;}
+    </style>
+    <script>(function(){var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);})();</script>
 </head>
 <body>
     <!-- Navigation Bar -->
@@ -16,7 +23,7 @@
                 <svg class="logo-icon" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/>
                 </svg>
-                <span>CrimsonSync</span>
+                <span">CrimsonSync</span>
             </div>
 
             <div class="nav-menu" id="navMenu">
@@ -25,14 +32,15 @@
                 <a href="#features" class="nav-link">Features</a>
                 <a href="#how-it-works" class="nav-link">How It Works</a>
                 <a href="#contact" class="nav-link">Contact</a>
+                <span id="roleNavLinks"></span>
             </div>
 
-            <div class="nav-actions">
+            <div class="nav-actions" id="navActions">
                 <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
                     <span class="theme-icon">🌙</span>
                 </button>
-                <a href="loginpage/login.html" class="nav-btn login-btn">Login</a>
-                <a href="signuppage/signup.html" class="nav-btn cta-btn">Get Started</a>
+                <a href="src/pages/Login/login.html" class="nav-btn login-btn" id="loginBtn">Login</a>
+                <a href="src/pages/Signup/signup.html" class="nav-btn cta-btn" id="signupBtn">Get Started</a>
             </div>
 
             <button class="hamburger" id="hamburger">
@@ -55,8 +63,8 @@
                     CrimsonSync bridges donors, recipients, hospitals, and blood banks in real time. Connect, donate, and save lives today.
                 </p>
                 <div class="hero-buttons fade-in-up" data-delay="0.2">
-                    <button class="btn btn-primary">Become a Donor</button>
-                    <button class="btn btn-secondary">Request Blood</button>
+                    <button class="btn btn-primary" id="heroDonorBtn">Become a Donor</button>
+                    <button class="btn btn-secondary" id="heroRequestBtn">Request Blood</button>
                 </div>
             </div>
 
@@ -91,10 +99,16 @@
         </div>
     </section>
 
+    <!-- Logged-in Welcome Panel (injected by JS) -->
+    <div id="loggedInPanel" class="logged-in-panel" hidden></div>
+
+    <!-- Request Alerts (shown when logged in) -->
+    <div id="requestAlerts" class="request-alerts" hidden></div>
+
     <!-- Live Stats Section -->
     <section class="live-stats">
         <div class="container">
-            <div class="stats-grid">
+            <div class="stats-grid" id="statsGrid">
                 <div class="stat-card">
                     <h3 class="stat-number" data-target="50000">0</h3>
                     <p class="stat-label">Registered Donors</p>
@@ -123,7 +137,7 @@
                 <p>Your donation has the power to transform lives and strengthen our community.</p>
             </div>
 
-            <div class="cards-grid">
+            <div class="cards-grid" id="benefitsGrid">
                 <div class="benefit-card fade-in-up" data-delay="0">
                     <div class="card-icon-lg">❤️</div>
                     <h3>Save Lives</h3>
@@ -387,10 +401,10 @@
                 </div>
 
                 <div class="footer-col">
-                    <h4>Contact</h4>
+                    <h4>Contacts</h4>
                     <ul>
-                        <li>📧 crimsonsync@tutamail.com</li>
-                        <li>📞 083-5200000</li>
+                        <li>📧 <a href="mailto:crimsonsync7@gmail.com">crimsonsync7@gmail.com</a></li>
+                        <li>📞 <a href="tel:083-5200000">083-5200000</a></li>
                         <li>📍 Available 24/7</li>
                     </ul>
                 </div>
@@ -399,10 +413,8 @@
             <div class="footer-bottom">
                 <p>&copy; 2026 CrimsonSync. All rights reserved. Saving lives, one donation at a time.</p>
                 <div class="social-links">
-                    <a href="#" aria-label="Twitter">🐦</a>
-                    <a href="#" aria-label="Facebook">👍</a>
-                    <a href="#" aria-label="Instagram">📷</a>
-                    <a href="#" aria-label="LinkedIn">💼</a>
+                    <div class="instagram_icon" href="icons/instagram.png"></div>
+                    <a href="https://www.instagram.com/crimsonsy9c/" aria-label="Instagram">Instagram</a>
                 </div>
             </div>
         </div>
@@ -411,6 +423,7 @@
     <!-- Scroll to Top Button -->
     <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">↑</button>
 
-    <script src="script.js"></script>
+    <div id="page-transition"></div>
+    <script src="src/pages/Home/script.js"></script>
 </body>
 </html>

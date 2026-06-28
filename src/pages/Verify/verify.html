@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#DC2626">
+    <title>Verify Account - CrimsonSync</title>
+    <link rel="stylesheet" href="../../styles/main.css">
+    <script src="../../../public/env.js"></script>
+<script>(function(){var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t);})();</script>
+<style>#page-transition{position:fixed;inset:0;background:#DC2626;z-index:9999;pointer-events:none;opacity:0;transition:opacity 0.35s cubic-bezier(0.4,0,0.2,1);}</style>
+</head>
+<body>
+    <div id="page-transition"></div>
+    <div class="auth-page">
+        <div class="auth-container">
+            <div class="auth-brand">
+                <div>
+                    <h2>Verify Your <span class="highlight">Account</span></h2>
+                    <p>Complete email verification and identity verification to access your role-specific dashboard.</p>
+                </div>
+            </div>
+            <div class="auth-card" style="max-width:480px">
+                <h1>Verification</h1>
+                <p class="auth-subtitle" id="verifySubtitle">Complete both steps to activate your account.</p>
+
+                <div class="verify-steps">
+                    <div class="verify-step active" id="stepEmail">1. Email OTP</div>
+                    <div class="verify-step" id="stepIdentity">2. ID Verification</div>
+                </div>
+
+                <!-- Step 1: Email OTP -->
+                <div id="emailStep">
+                    <p style="font-size:0.9rem;color:var(--text-light);margin-bottom:1rem">Enter the 6-digit code sent to your email.</p>
+                    <div class="otp-inputs" id="otpInputs">
+                        <input type="text" maxlength="1" inputmode="numeric" class="otp-digit">
+                        <input type="text" maxlength="1" inputmode="numeric" class="otp-digit">
+                        <input type="text" maxlength="1" inputmode="numeric" class="otp-digit">
+                        <input type="text" maxlength="1" inputmode="numeric" class="otp-digit">
+                        <input type="text" maxlength="1" inputmode="numeric" class="otp-digit">
+                        <input type="text" maxlength="1" inputmode="numeric" class="otp-digit">
+                    </div>
+                    <button class="btn btn-primary btn-block" id="verifyEmailBtn">Verify Email</button>
+                    <p style="text-align:center;margin-top:1rem;font-size:0.85rem;color:var(--text-light)">
+                        Didn't receive code? <a href="#" id="resendOtp">Resend OTP</a>
+                    </p>
+                </div>
+
+                <!-- Step 2: Identity -->
+                <div id="identityStep" style="display:none">
+                    <h3 id="identityTitle" style="margin-bottom:0.5rem;font-size:1.1rem">Identity Verification</h3>
+                    <p id="identityDesc" style="font-size:0.9rem;color:var(--text-light);margin-bottom:1rem"></p>
+                    <ul id="docList" style="font-size:0.85rem;color:var(--text-light);margin-bottom:1rem;padding-left:1.25rem"></ul>
+                    <div class="upload-zone" id="uploadZone">
+                        <div class="upload-icon">📄</div>
+                        <p><strong>Click to upload</strong> or drag and drop</p>
+                        <p style="font-size:0.8rem;color:var(--text-muted);margin-top:0.25rem">PDF, JPG, PNG up to 10MB</p>
+                        <input type="file" id="fileInput" accept=".pdf,.jpg,.jpeg,.png" multiple hidden>
+                    </div>
+                    <div id="fileList" style="margin-top:0.75rem;font-size:0.85rem"></div>
+                    <button class="btn btn-primary btn-block" id="verifyIdentityBtn" style="margin-top:1.25rem">Submit Verification</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="verify.js"></script>
+    <script>
+    (function(){var o=document.getElementById('page-transition');if(!o)return;o.style.opacity='1';o.style.pointerEvents='all';requestAnimationFrame(function(){requestAnimationFrame(function(){o.style.opacity='0';o.style.pointerEvents='none';});});document.addEventListener('click',function(e){var a=e.target.closest('a[href]');if(!a)return;var h=a.getAttribute('href');if(!h||h.startsWith('#')||h.startsWith('mailto:')||h.startsWith('tel:')||h.startsWith('http')||a.target==='_blank')return;e.preventDefault();o.style.opacity='1';o.style.pointerEvents='all';setTimeout(function(){window.location.href=h;},350);});})();
+    </script>
+</body>
+</html>

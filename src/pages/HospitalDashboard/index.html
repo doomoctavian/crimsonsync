@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#DC2626">
+    <title>Hospital Dashboard - CrimsonSync</title>
+    <link rel="stylesheet" href="../../styles/main.css">
+    <script src="../../../public/env.js"></script>
+<script>(function(){var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t);})();</script>
+<style>#page-transition{position:fixed;inset:0;background:#DC2626;z-index:9999;pointer-events:none;opacity:0;transition:opacity 0.35s cubic-bezier(0.4,0,0.2,1);}</style>
+</head>
+<body>
+    <div id="page-transition"></div>
+    <div id="app"></div>
+    <script type="module" src="dashboard.js"></script>
+    <script>(function(){var o=document.getElementById("page-transition");if(!o)return;o.style.opacity="1";o.style.pointerEvents="all";requestAnimationFrame(function(){requestAnimationFrame(function(){o.style.opacity="0";o.style.pointerEvents="none";});});document.addEventListener("click",function(e){var a=e.target.closest("a[href]");if(!a)return;var h=a.getAttribute("href");if(!h||h.startsWith("#")||h.startsWith("mailto:")||h.startsWith("tel:")||h.startsWith("http")||a.target==="_blank")return;e.preventDefault();o.style.opacity="1";o.style.pointerEvents="all";setTimeout(function(){window.location.href=h;},350);});})();
+    </script>
+</body>
+</html>

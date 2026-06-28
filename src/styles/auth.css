@@ -1,0 +1,146 @@
+@import './variables.css';
+
+/* Auth pages */
+.auth-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--gradient-hero);
+    padding: 2rem 1rem;
+}
+
+.auth-container {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    gap: 3rem;
+    width: 100%;
+    max-width: 960px;
+}
+
+.auth-brand {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.auth-brand h2 {
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    font-weight: 700;
+    color: var(--primary);
+    line-height: 1.15;
+    margin-bottom: 1.5rem;
+}
+
+.auth-brand p { color: var(--text-light); font-size: 1.05rem; line-height: 1.7; }
+
+.auth-card {
+    flex: 1;
+    background: var(--bg-card);
+    border-radius: 1rem;
+    padding: 2.5rem;
+    box-shadow: var(--shadow-xl);
+    border: 1px solid var(--border-light);
+    max-width: 440px;
+    width: 100%;
+}
+
+.auth-card h1 { font-size: 1.75rem; font-weight: 700; margin-bottom: 0.5rem; }
+.auth-card .auth-subtitle { color: var(--text-light); margin-bottom: 2rem; }
+
+.auth-footer { text-align: center; margin-top: 1.5rem; color: var(--text-light); font-size: 0.9rem; }
+
+.otp-inputs { display: flex; gap: 0.5rem; justify-content: center; margin: 1.5rem 0; }
+.otp-inputs input {
+    width: 3rem; height: 3.5rem;
+    text-align: center; font-size: 1.5rem; font-weight: 700;
+    border: 2px solid var(--border-light); border-radius: 0.5rem;
+    background: var(--bg-white); color: var(--text-dark);
+}
+.otp-inputs input:focus { border-color: var(--primary); outline: none; }
+
+.upload-zone {
+    border: 2px dashed var(--border-light);
+    border-radius: 0.75rem;
+    padding: 2rem;
+    text-align: center;
+    cursor: pointer;
+    transition: var(--transition);
+    background: var(--bg-light);
+}
+.upload-zone:hover { border-color: var(--primary); background: rgba(220, 38, 38, 0.04); }
+.upload-zone .upload-icon { font-size: 2rem; margin-bottom: 0.5rem; }
+
+.verify-steps { display: flex; gap: 0.5rem; margin-bottom: 2rem; }
+.verify-step {
+    flex: 1; text-align: center; padding: 0.75rem;
+    border-radius: 0.5rem; font-size: 0.8rem; font-weight: 600;
+    background: var(--bg-light); color: var(--text-light);
+}
+.verify-step.active { background: rgba(220, 38, 38, 0.12); color: var(--primary); }
+.verify-step.done { background: rgba(16, 185, 129, 0.12); color: var(--success); }
+
+@media (max-width: 768px) {
+    .auth-container { flex-direction: column; }
+    .auth-brand { padding: 1rem; text-align: center; }
+    .auth-card { max-width: 100%; }
+}
+
+/* Upload zone for profile verification section */
+label.upload-zone {
+    display: block;
+    border: 2px dashed var(--border-light);
+    border-radius: 0.75rem;
+    padding: 1.25rem;
+    text-align: center;
+    cursor: pointer;
+    transition: var(--transition);
+    background: var(--bg-light);
+}
+label.upload-zone:hover { border-color: var(--primary); background: rgba(220,38,38,0.04); }
+
+/* ── Extra mobile responsive fixes ─────────────────────── */
+@media (max-width: 480px) {
+    .auth-page {
+        padding: 1.25rem 0.75rem;
+        align-items: flex-start;
+        padding-top: 4.5rem; /* space for home button */
+    }
+
+    .auth-container {
+        gap: 1.5rem;
+    }
+
+    .auth-brand h2 {
+        font-size: 1.6rem;
+    }
+
+    .auth-brand p {
+        font-size: 0.9rem;
+    }
+
+    .auth-card {
+        padding: 1.75rem 1.25rem;
+        border-radius: 0.75rem;
+    }
+
+    .auth-card h1 {
+        font-size: 1.4rem;
+    }
+
+    .otp-inputs input {
+        width: 2.5rem;
+        height: 3rem;
+        font-size: 1.25rem;
+    }
+}
+
+/* Ensure home-back-btn doesn't overlap auth content on tiny screens */
+@media (max-width: 360px) {
+    .auth-page {
+        padding-top: 5rem;
+    }
+}
